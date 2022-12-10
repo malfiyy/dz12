@@ -1,0 +1,15 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Post</title>
+	</head>
+	<body>
+		{% for post in posts %}
+		<br />
+		<div>
+			<h4>{{post.title}}</h4>
+			<p>{{post.description}}</p>
+		</div>
+		{% endfor %}
+	</body>
+</html>

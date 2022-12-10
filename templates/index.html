@@ -1,0 +1,25 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>App</title>
+	</head>
+	<body>
+		<h2>Объявления</h2>
+		<a href="add">Добавить</a>
+
+		{% for post in posts %}
+		<br />
+		<div>
+			<h4><a href="/post?uuid={{post.uuid}}">{{post.title}}</a></h4>
+			<p>{{post.description}}</p>
+			{% if post.hasAccess %}
+			<form action="" method="post">
+				<input id="uuid" name="uuid" type="text" value="{{post.uuid}}" style="display: none" />
+				<button type="submit">Удалить</button>
+			</form>
+			<a href="/edit?uuid={{post.uuid}}">Редактировать</a>
+			{% endif %}
+		</div>
+		{% endfor %}
+	</body>
+</html>
